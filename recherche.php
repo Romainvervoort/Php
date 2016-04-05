@@ -2,7 +2,7 @@
 require'header.php';
 ?>
        	<?php
-$pdo = new PDO('mysql:host=localhost;dbname=test;charset=utf8','root','root');
+$pdo =new PDO('mysql:host=mysql6.000webhost.com;dbname=a5075427_test;charset=utf8','a5075427_root','root1994');
 				if(isset($_POST['search']) && $_POST['search'] != NULL)
 				{
 					$requete = htmlspecialchars($_POST['search']);
@@ -32,9 +32,21 @@ $pdo = new PDO('mysql:host=localhost;dbname=test;charset=utf8','root','root');
 						echo'<img src="upload/' .$donnees["image"].' "/>';
 						?>
 						</p>
-							<?php echo '<a href="modifier.php?id=' . $donnees['id'] . '"><input type="submit" value="Modifier">' ?>
-							<?php echo '<a href="supprimer.php?id=' . $donnees['id'] . '"><input type="submit" value="Supprimer">'?>
-					<?php		
+						<?php
+	
+						$sid=$_COOKIE[sid];
+
+						$veri=$pdo->query('Select id from utilisateur where sid ="'.$sid.'"');
+						($donnee =$veri->fetch());
+		
+						if( $donnee['id']>1)
+						{
+							?>
+						<?php echo '<a href="modifier.php?id=' . $donnees['id'] . '"><input type="submit" value="Modifier">' ?>
+						<?php echo '<a href="supprimer.php?id=' . $donnees['id'] . '"><input type="submit" value="Supprimer">' ?>
+						<?php
+						}
+							
 					}
 
 

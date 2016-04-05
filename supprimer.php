@@ -11,7 +11,7 @@ $id=$_GET['id'];
 
 try
 {
-$bdd = new PDO('mysql:host=localhost;dbname=test;charset=utf8','root','root');
+$bdd = new PDO('mysql:host=mysql6.000webhost.com;dbname=a5075427_test;charset=utf8','a5075427_root','root1994');
 }
 catch(Exception $e)
 {
