@@ -45,8 +45,8 @@ $reponse = $bdd->query('Select * from article');
 		{
 		?>
 		
-		<?php echo '<a href="modifier.php?id=' . $donnees['id'] . '"><input type="submit" value="Modifier">' ?>
-		<?php echo '<a href="supprimer.php?id=' . $donnees['id'] . '"><input type="submit" value="Supprimer">' ?>
+		<?php echo '<a href="modifier.php?id=' . $donnees['id'] . '"><input type="submit" value="Modifier">'</a> ?>
+		<?php echo '<a href="supprimer.php?id=' . $donnees['id'] . '"><input type="submit" value="Supprimer">'</a> ?>
 		
 
 <?php
